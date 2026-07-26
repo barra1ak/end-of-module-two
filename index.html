@@ -1,65 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Module 2 Workbook | Foundations of Agriselling</title>
-<meta name="description" content="End-of-module priority portfolio workbook for Foundations of Agriselling Module 2." />
-<style>
-:root{--black:#1f1f1f;--gold:#cfb991;--gold-dark:#8e6f3e;--cream:#f8f5ef;--white:#fff;--gray-100:#f3f4f6;--gray-300:#d1d5db;--gray-600:#4b5563;--success:#2f6b45;--warning:#8a5a13;--danger:#9a3f35;--radius:22px;--shadow:0 18px 55px rgba(20,20,20,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--black);background:linear-gradient(180deg,#f6f2ea 0%,#fff 34%,#f7f7f6 100%);line-height:1.55}button,input,textarea,select{font:inherit}button{cursor:pointer}.topbar{position:sticky;top:0;z-index:20;background:rgba(31,31,31,.97);color:white;border-bottom:4px solid var(--gold)}.topbar-inner{max-width:1180px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand-lockup{display:flex;align-items:center;gap:12px;min-width:0}.brand-mark{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--gold);color:var(--black);font-weight:900;letter-spacing:.04em;flex:0 0 auto}.brand-copy{min-width:0}.brand-copy strong{display:block;font-size:.95rem}.brand-copy span{display:block;color:#ddd4c7;font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.save-status{font-size:.8rem;color:#e9e3db;display:flex;align-items:center;gap:7px;white-space:nowrap}.save-dot{width:9px;height:9px;border-radius:99px;background:#75c78e;box-shadow:0 0 0 4px rgba(117,199,142,.15)}
-.hero{max-width:1180px;margin:0 auto;padding:58px 22px 30px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(290px,.7fr);gap:28px;align-items:stretch}.hero-main,.progress-card{border-radius:30px;box-shadow:var(--shadow)}.hero-main{position:relative;overflow:hidden;padding:42px;color:white;background:radial-gradient(circle at 82% 18%,rgba(207,185,145,.28),transparent 30%),linear-gradient(135deg,#1f1f1f 0%,#32302d 100%)}.hero-main:after{content:"";position:absolute;right:-55px;bottom:-70px;width:210px;height:210px;border-radius:50%;border:38px solid rgba(207,185,145,.12)}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(207,185,145,.14);border:1px solid rgba(207,185,145,.5);color:#f3e8d4;font-weight:800;font-size:.76rem;text-transform:uppercase;letter-spacing:.09em}h1{font-size:clamp(2rem,4vw,3.65rem);line-height:1.04;margin:20px 0 16px;max-width:760px;letter-spacing:-.035em}.hero-main p{max-width:730px;color:#eee9e1;font-size:1.05rem;margin:0}.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.hero-tag{padding:7px 11px;border-radius:10px;background:rgba(255,255,255,.08);color:#f6f3ef;font-size:.82rem}.progress-card{background:var(--white);padding:30px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #ebe6dc}.progress-card h2{margin:0 0 7px;font-size:1.15rem}.progress-card p{margin:0;color:var(--gray-600);font-size:.9rem}.progress-ring-wrap{display:flex;align-items:center;gap:19px;margin:24px 0}.ring{--p:0;width:104px;height:104px;border-radius:50%;background:conic-gradient(var(--gold-dark) calc(var(--p)*1%),#ece8df 0);display:grid;place-items:center;flex:0 0 auto;position:relative}.ring:before{content:"";width:78px;height:78px;border-radius:50%;background:white;position:absolute}.ring-value{position:relative;z-index:1;font-weight:900;font-size:1.2rem}.progress-detail strong{display:block;font-size:1.05rem}.progress-detail span{display:block;color:var(--gray-600);font-size:.82rem;margin-top:4px}.mini-progress{height:9px;border-radius:99px;background:#ece8df;overflow:hidden}.mini-progress>div{height:100%;width:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold));transition:width .25s ease}
-.layout{max-width:1180px;margin:0 auto;padding:0 22px 80px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:25px;align-items:start}.sidebar{position:sticky;top:88px;background:white;border:1px solid #e9e5dd;border-radius:var(--radius);padding:17px;box-shadow:0 12px 35px rgba(20,20,20,.06)}.sidebar-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;color:#70685d;font-weight:900;padding:7px 8px 10px}.nav-link{display:flex;align-items:center;gap:10px;text-decoration:none;color:#393632;padding:10px 9px;border-radius:11px;font-size:.86rem;font-weight:700}.nav-link:hover{background:var(--cream)}.nav-num{width:25px;height:25px;border-radius:8px;background:#eee9df;display:grid;place-items:center;font-size:.72rem;flex:0 0 auto}.nav-link.complete .nav-num{background:#dceade;color:var(--success)}.content{min-width:0}.intro-note{background:#fffaf0;border:1px solid #e5d2a9;border-left:5px solid var(--gold-dark);padding:18px 20px;border-radius:15px;margin-bottom:20px}.intro-note strong{display:block;margin-bottom:3px}.intro-note p{margin:0;color:#5d5345;font-size:.9rem}.section-card{scroll-margin-top:95px;background:white;border:1px solid #e8e5df;border-radius:var(--radius);margin-bottom:20px;box-shadow:0 14px 38px rgba(31,31,31,.055);overflow:hidden}.section-head{padding:24px 27px 18px;display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid #eeeae4;background:linear-gradient(180deg,#fff 0%,#fdfbf8 100%)}.section-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:var(--gold);font-size:1.15rem;flex:0 0 auto}.section-head h2{margin:0 0 4px;font-size:1.22rem}.section-head p{margin:0;color:var(--gray-600);font-size:.88rem}.section-body{padding:25px 27px 29px}.field{margin-bottom:20px}.field:last-child{margin-bottom:0}label,legend{display:block;font-weight:800;margin-bottom:7px;font-size:.91rem}.hint{margin:-2px 0 8px;font-size:.79rem;color:#6a655f}input[type=text],textarea,select,input[type=number]{width:100%;border:1px solid #cfcac1;border-radius:12px;padding:12px 13px;color:var(--black);background:white;outline:none;transition:.18s ease;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--gold-dark);box-shadow:0 0 0 4px rgba(142,111,62,.12)}textarea{min-height:105px}.tall{min-height:145px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:17px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choice{display:flex;align-items:flex-start;gap:10px;border:1px solid #ded9d0;border-radius:13px;padding:12px;background:#fff;transition:.16s ease}.choice:hover{border-color:#b49a6d;background:#fffcf7}.choice input{margin-top:3px;accent-color:var(--gold-dark)}.choice span{font-size:.87rem}.customer-card{border:1px solid #ded9d0;border-radius:17px;margin-bottom:15px;overflow:hidden}.customer-head{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:15px;background:#faf8f4;border-bottom:1px solid #e7e2d9}.customer-number{width:38px;height:38px;border-radius:12px;background:var(--black);color:white;display:grid;place-items:center;font-weight:900}.customer-head input{font-weight:850}.score-pill{min-width:88px;text-align:center;padding:8px 10px;border-radius:999px;background:#ece8df;font-size:.78rem;font-weight:900}.score-pill.high{background:#dceade;color:var(--success)}.score-pill.medium{background:#f5ead1;color:var(--warning)}.score-pill.low{background:#f2dfdc;color:var(--danger)}.customer-body{padding:17px}.score-grid{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:10px}.score-field label{font-size:.73rem;color:#5d564d}.score-field select{padding:9px}.heatmap-wrap{overflow-x:auto}.heatmap{width:100%;border-collapse:separate;border-spacing:0;min-width:670px}.heatmap th,.heatmap td{padding:11px 9px;border-right:1px solid #e4dfd6;border-bottom:1px solid #e4dfd6;text-align:center;font-size:.82rem}.heatmap th{background:#252525;color:white;font-weight:800}.heatmap th:first-child{border-radius:12px 0 0 0}.heatmap th:last-child{border-radius:0 12px 0 0}.heatmap td:first-child{text-align:left;font-weight:800;background:#faf8f4}.heat-high{background:#dceade;color:#24573a;font-weight:900}.heat-mid{background:#f5ead1;color:#76501b;font-weight:900}.heat-low{background:#f2dfdc;color:#833b33;font-weight:900}.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.priority-card{border:2px solid #d8c49d;border-radius:17px;padding:18px;background:linear-gradient(180deg,#fffdf9,#fff)}.priority-card h3{margin:0 0 15px}.forecast-box{background:#f5f7f3;border:1px solid #cfddcf;border-radius:15px;padding:17px}.footer-actions{position:sticky;bottom:0;z-index:15;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid #dedad3;box-shadow:0 -10px 35px rgba(20,20,20,.08)}.footer-actions-inner{max-width:1180px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}.footer-message strong{display:block;font-size:.88rem}.footer-message span{color:var(--gray-600);font-size:.76rem}.buttons{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.btn{border-radius:12px;padding:11px 16px;font-weight:850;border:1px solid transparent}.btn-secondary{background:white;border-color:#bbb4aa;color:#39342e}.btn-primary{background:var(--black);color:white}.btn-gold{background:var(--gold);color:var(--black)}.btn:disabled{opacity:.55;cursor:not-allowed}.toast{position:fixed;right:22px;bottom:86px;z-index:50;background:#1f1f1f;color:white;padding:12px 15px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.22);transform:translateY(18px);opacity:0;pointer-events:none;transition:.2s ease;font-size:.85rem}.toast.show{opacity:1;transform:translateY(0)}
-@media(max-width:1000px){.score-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:880px){.hero{grid-template-columns:1fr;padding-top:32px}.layout{grid-template-columns:1fr}.sidebar{display:none}.hero-main{padding:32px 25px}.grid-2,.choice-grid,.portfolio-grid{grid-template-columns:1fr}.footer-actions-inner{align-items:flex-start}.footer-message{display:none}.buttons{width:100%}.btn{flex:1}}@media(max-width:560px){.topbar-inner{padding:10px 14px}.brand-copy span{max-width:185px}.save-status span:last-child{display:none}.hero,.layout{padding-left:14px;padding-right:14px}.section-head,.section-body{padding-left:18px;padding-right:18px}.buttons{flex-direction:column}.btn{width:100%}.customer-head{grid-template-columns:42px 1fr}.score-pill{grid-column:1/-1}.score-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Purdue-themed agricultural customer segmentation activity.">
+  <title>Customer Segmentation Lab</title>
+  <style>
+    :root{
+      --black:#000;--gold:#cfb991;--gold-dark:#8e6f3e;--gold-light:#f5eddf;--white:#fff;
+      --ink:#181818;--muted:#626262;--canvas:#f5f4f0;--border:#d8d5ce;
+      --green:#28724f;--green-soft:#eaf6ef;--amber:#936100;--amber-soft:#fff6dc;
+      --red:#a23a37;--red-soft:#fff0ef;--shadow:0 16px 42px rgba(0,0,0,.09);
+      --radius-xl:24px;--radius-lg:18px;--radius-md:12px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at top right,rgba(207,185,145,.26),transparent 32rem),linear-gradient(180deg,#faf9f6 0%,#f1f0ec 100%);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+    button,select,textarea,input{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:4px solid rgba(142,111,62,.25);outline-offset:3px}
+    h1,h2,h3,p{margin-top:0}
+    h1{margin-bottom:16px;font-size:clamp(2.2rem,5vw,4.35rem);line-height:1.02;letter-spacing:-.045em}
+    h2{margin-bottom:8px;font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.15}
+    h3{margin-bottom:7px;font-size:1.05rem}
+    .shell{width:min(1180px,calc(100% - 30px));margin:24px auto 34px}
+    .hero{overflow:hidden;border-radius:var(--radius-xl);background:var(--black);color:var(--white);box-shadow:var(--shadow)}
+    .hero-line{height:8px;background:var(--gold)}
+    .hero-inner{padding:clamp(30px,5vw,58px)}
+    .hero-main{max-width:920px}
+    .eyebrow{display:inline-flex;margin-bottom:15px;border:1px solid rgba(207,185,145,.65);border-radius:999px;padding:7px 12px;color:var(--gold);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .hero-copy{max-width:830px;margin-bottom:0;color:#e7e7e7;font-size:1.05rem}
+    .objective{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:start;max-width:950px;margin-top:28px;border:1px solid rgba(207,185,145,.5);border-radius:var(--radius-lg);background:rgba(207,185,145,.12);padding:18px 20px}
+    .objective-mark{display:grid;width:42px;height:42px;place-items:center;border-radius:50%;background:var(--gold);color:var(--black);font-weight:900}
+    .objective-label{margin-bottom:5px;color:var(--gold);font-size:.73rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .objective p{margin:0;font-weight:700}
+    .progress{margin:20px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--white);padding:17px 20px}
+    .progress-head{display:flex;justify-content:space-between;gap:18px;margin-bottom:10px;font-size:.9rem;font-weight:800}
+    .progress-track{overflow:hidden;height:10px;border-radius:999px;background:#e8e5df}
+    .progress-bar{width:25%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--gold-dark),var(--gold));transition:width .25s ease}
+    .panel{display:none;border:1px solid var(--border);border-top:6px solid var(--gold-dark);border-radius:var(--radius-xl);background:var(--white);padding:clamp(22px,4vw,42px);box-shadow:var(--shadow)}
+    .panel.active{display:block;animation:rise .22s ease}
+    @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .intro{max-width:880px;margin-bottom:22px;color:var(--muted)}
+    .callout{margin:20px 0;border-left:6px solid var(--gold-dark);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--gold-light);padding:18px}
+    .lens-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+    .lens-card,.scenario-card,.field-card,.test-card{border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;padding:18px}
+    .lens-icon{display:grid;width:42px;height:42px;place-items:center;margin-bottom:11px;border-radius:50%;background:var(--black);color:var(--gold);font-size:.72rem;font-weight:900}
+    .lens-card p{margin-bottom:0;color:var(--muted);font-size:.92rem}
+    .buttons{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+    .btn{border:0;border-radius:13px;padding:12px 18px;font-weight:800;transition:transform .15s ease,background .15s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--black);color:var(--white)}
+    .btn-gold{background:var(--gold-dark);color:var(--white)}
+    .btn-secondary{border:1px solid var(--border);background:var(--white);color:var(--ink)}
+    .btn:disabled{cursor:not-allowed;opacity:.45;transform:none}
+    .scenario-list,.test-grid{display:grid;gap:16px;margin-top:22px}
+    .scenario-head{display:flex;gap:13px;align-items:flex-start}
+    .scenario-number{display:grid;min-width:38px;height:38px;place-items:center;border-radius:50%;background:var(--black);color:var(--gold);font-weight:900}
+    .choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+    .choice{border:1px solid var(--border);border-radius:12px;background:#fff;padding:12px;color:var(--ink);font-weight:800;text-align:left}
+    .choice:hover{border-color:var(--gold-dark);background:var(--gold-light)}
+    .choice.correct{border-color:var(--green);background:var(--green-soft);color:var(--green)}
+    .choice.incorrect{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+    .feedback{display:none;margin-top:16px;border-radius:var(--radius-lg);padding:18px}
+    .feedback.show{display:block}
+    .feedback.good{background:var(--green-soft);color:var(--green);border:1px solid #bdddc9}
+    .feedback.watch{background:var(--amber-soft);color:var(--amber);border:1px solid #ead596}
+    .feedback.risk{background:var(--red-soft);color:var(--red);border:1px solid #ecc4c2}
+    .builder-shell{display:grid;grid-template-columns:.75fr 1.25fr;gap:20px;align-items:start}
+    .builder-control{border:1px solid var(--border);border-radius:var(--radius-xl);background:#f6f4ef;padding:19px}
+    label{display:block;margin-bottom:8px;font-weight:800}
+    select,textarea,input[type="text"]{width:100%;border:1px solid #bdb8ae;border-radius:12px;background:#fff;padding:12px}
+    textarea{min-height:105px;resize:vertical}
+    .helper{margin-top:9px;color:var(--muted);font-size:.85rem}
+    .customer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .customer-card{width:100%;border:2px solid var(--border);border-radius:var(--radius-lg);background:#fff;padding:17px;color:var(--ink);text-align:left;transition:.15s}
+    .customer-card:hover{border-color:var(--gold-dark);transform:translateY(-1px)}
+    .customer-card.selected{border-color:var(--gold-dark);background:var(--gold-light)}
+    .customer-state{display:inline-block;margin-bottom:10px;border-radius:999px;padding:5px 9px;background:#f0efeb;color:var(--muted);font-size:.7rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .customer-card.selected .customer-state{background:var(--black);color:var(--gold)}
+    .customer-card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:.88rem}
+    .definition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+    .field-card.full{grid-column:1/-1}
+    .test-card{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .test-card p{margin-bottom:0;color:var(--muted);font-size:.9rem}
+    .test-options{display:flex;gap:9px;flex-wrap:wrap}
+    .test-choice{border:1px solid var(--border);border-radius:999px;background:#fff;padding:8px 13px;font-weight:800}
+    .test-choice.active{border-color:var(--gold-dark);background:var(--gold-light);color:#624918}
+    .summary-card{border-radius:var(--radius-lg);background:var(--black);color:var(--white);padding:22px}
+    .summary-card strong{color:var(--gold)}
+    .coach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:22px}
+    .coach-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px}
+    .coach-card.best{border-top:6px solid var(--green);background:var(--green-soft)}
+    .coach-card.watch-card{border-top:6px solid var(--amber);background:var(--amber-soft)}
+    .completion{display:grid;min-height:390px;place-items:center;text-align:center}
+    .completion-mark{display:grid;width:82px;height:82px;place-items:center;margin:0 auto 18px;border-radius:50%;background:var(--gold);color:var(--black);font-size:2.2rem;font-weight:900}
+    .completion p{max-width:700px;color:var(--muted)}
+    .footer{padding:20px 0 2px;color:var(--muted);text-align:center;font-size:.82rem}
+    .walkthrough{margin:0 0 24px;border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;background:#fff}
+    .walkthrough-head{background:var(--black);color:var(--white);padding:20px 22px}
+    .walkthrough-head .kicker{margin-bottom:5px;color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+    .walkthrough-head h3{margin-bottom:4px;font-size:1.35rem}
+    .walkthrough-head p{margin-bottom:0;color:#e6e6e6}
+    .walkthrough-body{padding:22px}
+    .walkthrough-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .walk-step{border:1px solid var(--border);border-radius:var(--radius-lg);padding:15px;background:#faf9f6}
+    .walk-step-num{display:grid;width:32px;height:32px;place-items:center;margin-bottom:9px;border-radius:50%;background:var(--gold);color:var(--black);font-weight:900}
+    .walk-step p{margin-bottom:0;color:var(--muted);font-size:.9rem}
+    .worked-answer{margin-top:16px;border-left:6px solid var(--green);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--green-soft);padding:17px}
+    .instruction-list{display:grid;gap:10px;margin:18px 0}
+    .instruction-row{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start}
+    .instruction-row span{display:grid;width:30px;height:30px;place-items:center;border-radius:50%;background:var(--black);color:var(--gold);font-weight:900;font-size:.82rem}
+    .selection-status{margin-top:14px;border-radius:12px;background:#fff;padding:12px;border:1px solid var(--border);font-size:.88rem}
+    .quick-example{width:100%;margin-top:10px;border:1px solid var(--gold-dark);border-radius:12px;background:var(--gold-light);padding:11px;color:#624918;font-weight:800;text-align:left}
+    .reset-example{display:none;width:100%;margin-top:8px;border:1px solid var(--border);border-radius:12px;background:#fff;padding:11px;color:var(--ink);font-weight:800;text-align:left}
+    .reset-example.show{display:block}
+    .feedback-section{margin-top:12px;padding-top:12px;border-top:1px solid currentColor}
+    .feedback-list{margin:8px 0 0;padding-left:20px}
+    .mini-guide{margin-top:8px;color:var(--muted);font-size:.82rem}
+    @media(max-width:960px){.lens-grid,.builder-shell,.walkthrough-steps{grid-template-columns:1fr}}
+    @media(max-width:760px){.choice-grid,.customer-grid,.definition-grid,.coach-grid{grid-template-columns:1fr}.field-card.full{grid-column:auto}.test-card{grid-template-columns:1fr}}
+    @media(max-width:600px){.shell{width:min(100% - 16px,1180px);margin:8px auto 22px}.hero{border-radius:17px}.hero-line{height:6px}.hero-inner{padding:27px 20px 24px}.eyebrow{font-size:.68rem}.hero-copy{font-size:.96rem}.objective{grid-template-columns:auto 1fr;padding:15px}.progress{margin:14px 0;padding:14px 15px}.progress-head{flex-direction:column;gap:3px}.panel{border-radius:18px;padding:22px 17px}.buttons{flex-direction:column}.btn{width:100%}}
+    @media print{body{background:#fff}.shell{width:100%;margin:0}.hero,.panel,.progress{box-shadow:none}.buttons,.progress{display:none!important}.panel{display:block!important;page-break-after:always}}
+  </style>
 </head>
 <body>
-<header class="topbar"><div class="topbar-inner"><div class="brand-lockup"><div class="brand-mark">CAB</div><div class="brand-copy"><strong>Foundations of Agriselling</strong><span>Module 2 Digital Workbook</span></div></div><div class="save-status"><span class="save-dot"></span><span id="saveStatus">Saved on this device</span></div></div></header>
-<main>
-<section class="hero"><div class="hero-main"><span class="eyebrow">Module 2 Application</span><h1>Build Your Priority Customer Portfolio</h1><p>Turn territory information into focused action. Analyze your market, compare five customer opportunities consistently, and choose the two accounts that deserve your strongest investment of time, knowledge, money, and relationships.</p><div class="hero-tags"><span class="hero-tag">Territory strategy</span><span class="hero-tag">Customer segmentation</span><span class="hero-tag">Opportunity heat map</span><span class="hero-tag">Forecasting assumptions</span></div></div><aside class="progress-card"><div><h2>Your workbook progress</h2><p>Your responses save automatically in this browser.</p></div><div class="progress-ring-wrap"><div class="ring" id="progressRing"><span class="ring-value" id="progressPercent">0%</span></div><div class="progress-detail"><strong id="progressLabel">Let’s get started</strong><span id="progressCount">0 of 18 key responses complete</span></div></div><div class="mini-progress"><div id="progressBar"></div></div></aside></section>
-<div class="layout"><nav class="sidebar" aria-label="Workbook sections"><div class="sidebar-title">Workbook Sections</div><a class="nav-link" href="#territory"><span class="nav-num">1</span><span>Territory Scan</span></a><a class="nav-link" href="#segments"><span class="nav-num">2</span><span>Strategic Fit</span></a><a class="nav-link" href="#customers"><span class="nav-num">3</span><span>Five Customers</span></a><a class="nav-link" href="#heatmap"><span class="nav-num">4</span><span>Heat Map</span></a><a class="nav-link" href="#portfolio"><span class="nav-num">5</span><span>Top Two Portfolio</span></a><a class="nav-link" href="#forecast"><span class="nav-num">6</span><span>Forecast & Review</span></a></nav>
-<div class="content"><div class="intro-note"><strong>Use evidence—not instinct alone</strong><p>Territory strategy is resource allocation. Your goal is not to label customers as “good” or “bad,” but to decide where limited selling effort is most likely to create meaningful mutual value. Scores are a starting point; your written justification matters most.</p></div>
-<form id="workbookForm" autocomplete="off">
-<section class="section-card" id="territory" data-section="territory"><div class="section-head"><div class="section-icon">🧭</div><div><h2>Scan the Territory</h2><p>Identify the market and environmental information that could change a sales decision.</p></div></div><div class="section-body"><div class="grid-2"><div class="field"><label for="territoryName">Territory, region, or market analyzed</label><input id="territoryName" name="territoryName" type="text" data-required="true" placeholder="Example: Central Indiana row-crop producers" /></div><div class="field"><label for="planningHorizon">Planning horizon</label><select id="planningHorizon" name="planningHorizon" data-required="true"><option value="">Select one</option><option>Next 90 days</option><option>Next 6 months</option><option>Next 12 months</option><option>Multi-year strategic view</option></select></div></div><fieldset class="field" style="border:0;padding:0"><legend>Which factors are most likely to affect your territory decisions?</legend><div class="choice-grid"><label class="choice"><input type="checkbox" name="territoryFactors" value="Geography and travel time"><span>Geography and travel time</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Production systems"><span>Production systems</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Market or industry trends"><span>Market or industry trends</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Regulation"><span>Regulation</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Technology adoption"><span>Technology adoption</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Competition"><span>Competition</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Customer concentration"><span>Customer concentration</span></label><label class="choice"><input type="checkbox" name="territoryFactors" value="Other environmental factor"><span>Other environmental factor</span></label></div></fieldset><div class="field"><label for="territoryEvidence">What evidence or observations matter most right now?</label><textarea id="territoryEvidence" name="territoryEvidence" data-required="true" placeholder="Describe the market, customer, competitor, and environmental information that should shape your choices."></textarea></div><div class="field"><label for="territoryImplication">What sales decision could this information change?</label><textarea id="territoryImplication" name="territoryImplication" data-required="true" placeholder="For example: spend more time in a sub-region, focus on a production system, adjust timing, or deprioritize a crowded segment."></textarea></div></div></section>
-<section class="section-card" id="segments" data-section="segments"><div class="section-head"><div class="section-icon">🎯</div><div><h2>Define Strategic Customer Fit</h2><p>Connect customer segments to your organization’s priorities and value bundle from Module 1.</p></div></div><div class="section-body"><div class="grid-2"><div class="field"><label for="prioritySegment">Priority customer segment</label><input id="prioritySegment" name="prioritySegment" type="text" data-required="true" placeholder="Describe the segment by needs, behavior, or operating characteristics" /></div><div class="field"><label for="segmentNeed">Most important need or challenge</label><input id="segmentNeed" name="segmentNeed" type="text" data-required="true" placeholder="What does this segment need to improve or protect?" /></div></div><div class="field"><label for="strategicFit">Why does this segment fit your company’s strategy and value bundle?</label><textarea id="strategicFit" name="strategicFit" data-required="true" placeholder="Connect the segment to your capabilities, priorities, and customer outcomes—not just revenue or size."></textarea></div><div class="field"><label for="relationshipReturn">What financial and nonfinancial return could a strong relationship create?</label><p class="hint">Consider growth, retention, referrals, credibility, market intelligence, access, and resources required.</p><textarea id="relationshipReturn" name="relationshipReturn" data-required="true" placeholder="A strong relationship could create..."></textarea></div></div></section>
-<section class="section-card" id="customers" data-section="customers"><div class="section-head"><div class="section-icon">🔎</div><div><h2>Compare Five Customer Opportunities</h2><p>Use the same criteria for every customer. Score each from 1 (low) to 5 (high).</p></div></div><div class="section-body"><div id="customerList"></div><p class="hint"><strong>Scoring guide:</strong> Strategic fit = alignment with company priorities; growth = future potential; relationship value = retention, referrals, credibility, insight, and access; probability = realistic likelihood of progress; resource efficiency = value relative to time, travel, support, and cost required.</p></div></section>
-<section class="section-card" id="heatmap" data-section="heatmap"><div class="section-head"><div class="section-icon">▦</div><div><h2>Initial Opportunity Heat Map</h2><p>Your comparison updates automatically as you score each customer.</p></div></div><div class="section-body"><div class="heatmap-wrap"><table class="heatmap"><thead><tr><th>Customer</th><th>Strategic Fit</th><th>Growth</th><th>Relationship Value</th><th>Probability</th><th>Resource Efficiency</th><th>Total / 25</th></tr></thead><tbody id="heatmapBody"></tbody></table></div><div class="field" style="margin-top:20px"><label for="heatmapInsight">What pattern, surprise, or tension do you see in the heat map?</label><textarea id="heatmapInsight" name="heatmapInsight" data-required="true" placeholder="For example: the largest account is not the best fit, or a smaller customer offers high relationship value with lower resource demands."></textarea></div></div></section>
-<section class="section-card" id="portfolio" data-section="portfolio"><div class="section-head"><div class="section-icon">★</div><div><h2>Select Your Top-Two Priority Portfolio</h2><p>Choose two accounts and justify the investment. The highest score does not automatically have to win.</p></div></div><div class="section-body"><div class="portfolio-grid"><div class="priority-card"><h3>Priority Account 1</h3><div class="field"><label for="priority1">Customer</label><select id="priority1" name="priority1" data-required="true"><option value="">Choose a customer</option></select></div><div class="field"><label for="priority1Evidence">Evidence supporting this choice</label><textarea id="priority1Evidence" name="priority1Evidence" data-required="true" placeholder="What facts, signals, and customer information support the choice?"></textarea></div><div class="field"><label for="priority1Assumptions">Important assumptions or uncertainty</label><textarea id="priority1Assumptions" name="priority1Assumptions" data-required="true" placeholder="What are you assuming that still needs to be tested?"></textarea></div><div class="field"><label for="priority1Resources">Resources and next action</label><textarea id="priority1Resources" name="priority1Resources" data-required="true" placeholder="What time, knowledge, relationships, support, or money is needed—and what happens next?"></textarea></div></div><div class="priority-card"><h3>Priority Account 2</h3><div class="field"><label for="priority2">Customer</label><select id="priority2" name="priority2" data-required="true"><option value="">Choose a customer</option></select></div><div class="field"><label for="priority2Evidence">Evidence supporting this choice</label><textarea id="priority2Evidence" name="priority2Evidence" data-required="true" placeholder="What facts, signals, and customer information support the choice?"></textarea></div><div class="field"><label for="priority2Assumptions">Important assumptions or uncertainty</label><textarea id="priority2Assumptions" name="priority2Assumptions" data-required="true" placeholder="What are you assuming that still needs to be tested?"></textarea></div><div class="field"><label for="priority2Resources">Resources and next action</label><textarea id="priority2Resources" name="priority2Resources" data-required="true" placeholder="What time, knowledge, relationships, support, or money is needed—and what happens next?"></textarea></div></div></div><div class="field" style="margin-top:20px"><label for="deprioritize">Which opportunity will you intentionally deprioritize, and why?</label><textarea id="deprioritize" name="deprioritize" placeholder="Good territory strategy also requires deciding where not to invest right now."></textarea></div></div></section>
-<section class="section-card" id="forecast" data-section="forecast"><div class="section-head"><div class="section-icon">↗</div><div><h2>Forecast, Test, and Review</h2><p>Turn your portfolio into a practical decision that can be revisited as assumptions change.</p></div></div><div class="section-body"><div class="forecast-box"><div class="grid-2"><div class="field"><label for="reviewDate">When will you review this portfolio?</label><input id="reviewDate" name="reviewDate" type="text" data-required="true" placeholder="Example: in 30 days or after the next buying cycle" /></div><div class="field"><label for="successSignal">What early signal will indicate progress?</label><input id="successSignal" name="successSignal" type="text" data-required="true" placeholder="Example: discovery meeting, trial, stakeholder access, or confirmed timing" /></div></div><div class="field"><label for="forecastAssumption">Which forecast assumption is most important to verify?</label><textarea id="forecastAssumption" name="forecastAssumption" data-required="true" placeholder="Consider probability, timing, expected value, customer need, internal support, or competitive position."></textarea></div><div class="field"><label for="adjustmentRule">What would cause you to reallocate your selling effort?</label><textarea id="adjustmentRule" name="adjustmentRule" data-required="true" placeholder="State the evidence that would cause you to increase, reduce, or redirect resources."></textarea></div></div></div></section>
-</form></div></div></main>
-<div class="footer-actions"><div class="footer-actions-inner"><div class="footer-message"><strong>Your work is saved on this device.</strong><span>Download the PDF when finished for your permanent Module 2 record.</span></div><div class="buttons"><button class="btn btn-secondary" type="button" id="reviewButton">Review Missing Items</button><button class="btn btn-primary" type="button" id="saveButton">Save Now</button><button class="btn btn-gold" type="button" id="pdfButton">Download Module 2 PDF</button></div></div></div><div class="toast" id="toast" role="status"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<main class="shell">
+  <header class="hero">
+    <div class="hero-line"></div>
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="eyebrow">Purdue Customer Strategy Activity</div>
+        <h1>Customer Segmentation Lab</h1>
+        <p class="hero-copy">Investigate a fictional agricultural market, identify customers who belong together, and decide whether your segment is strong enough to guide a focused sales strategy.</p>
+      </div>
+      <aside class="objective">
+        <div class="objective-mark">✓</div>
+        <div><div class="objective-label">Learning objective</div><p>Use demographic, product-usage, and psychographic information to identify and evaluate meaningful customer segments.</p></div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="progress">
+    <div class="progress-head"><span id="progressText">Step 1 of 4</span><span id="progressTitle">Learn the segmentation lenses</span></div>
+    <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+  </section>
+
+  <section id="step1" class="panel active">
+    <h2>Step 1: Learn the three segmentation lenses</h2>
+    <p class="intro">A market segment is a group of customers who may respond similarly to an offer because they share important needs, goals, behaviors, or beliefs about what creates value.</p>
+    <div class="callout"><strong>Your assignment:</strong> Learn the three textbook segmentation methods, practice recognizing them, build one customer segment, and test whether it is useful enough to guide action.</div>
+    <div class="lens-grid">
+      <article class="lens-card"><div class="lens-icon">DEM</div><h3>Demographics</h3><p>Observable characteristics such as operation size, age, income, education, acreage, or herd size.</p></article>
+      <article class="lens-card"><div class="lens-icon">USE</div><h3>Product usage</h3><p>What customers grow, raise, use, manage, or experience in their operation.</p></article>
+      <article class="lens-card"><div class="lens-icon">PSY</div><h3>Psychographics</h3><p>Buying behavior and value structure—how customers make decisions and what they believe matters most.</p></article>
+    </div>
+    <div class="buttons"><button id="startPractice" class="btn btn-primary" type="button">Start the segmentation challenge</button></div>
+  </section>
+
+  <section id="step2" class="panel">
+    <h2>Step 2: Identify the segmentation method</h2>
+    <p class="intro">Read each market description and choose the textbook segmentation method being used.</p>
+    <div id="scenarioList" class="scenario-list"></div>
+    <div id="quizSummary" class="feedback" aria-live="polite"></div>
+    <div class="buttons"><button id="quizBack" class="btn btn-secondary" type="button">Back</button><button id="openBuilder" class="btn btn-primary" type="button" disabled>Open the customer files</button></div>
+  </section>
+
+  <section id="step3" class="panel">
+    <h2>Step 3: Build a customer segment</h2>
+    <p class="intro">First, work through a simple example. Then use the same three-part process with the customer files: choose one lens, find a specific shared trait, and explain why that trait matters.</p>
+
+    <section class="walkthrough" aria-label="Worked segmentation example">
+      <div class="walkthrough-head">
+        <div class="kicker">Let’s do one together</div>
+        <h3>Example: Small livestock operations</h3>
+        <p>Follow the reasoning—not just the final answer.</p>
+      </div>
+      <div class="walkthrough-body">
+        <div class="walkthrough-steps">
+          <article class="walk-step"><div class="walk-step-num">1</div><h3>Choose one lens</h3><p>We choose <strong>Demographics</strong> because we want to group customers by observable operation size.</p></article>
+          <article class="walk-step"><div class="walk-step-num">2</div><h3>Find the shared trait</h3><p>Farm A has 140 dairy cows and Farm B has 175 dairy cows. Both are <strong>small livestock operations</strong>.</p></article>
+          <article class="walk-step"><div class="walk-step-num">3</div><h3>Explain why it matters</h3><p>Smaller operations may value affordable options, simple implementation, and personal support.</p></article>
+        </div>
+        <div class="worked-answer"><strong>A complete answer could be:</strong><br>“Using the demographic lens, I grouped Farm A and Farm B as Small Livestock Operations because both have relatively small herds. They may respond similarly to an affordable, easy-to-implement program with personal service.”</div>
+      </div>
+    </section>
+
+    <div class="callout"><strong>Now it’s your turn:</strong> You do not need to find the one perfect answer. You need a defensible group where at least two customers share one clear trait under the lens you selected.</div>
+
+    <div class="builder-shell">
+      <aside class="builder-control">
+        <label for="segmentLens">Segmentation lens</label>
+        <select id="segmentLens"><option value="">Choose one lens</option><option value="demographic">Demographics</option><option value="usage">Product usage</option><option value="psychographic">Psychographics</option></select>
+        <p id="lensHelper" class="helper">The lens determines which customer similarities should guide your selection.</p>
+        <div class="instruction-list">
+          <div class="instruction-row"><span>1</span><div><strong>Choose a lens.</strong><div class="mini-guide">Use only one type of information at a time.</div></div></div>
+          <div class="instruction-row"><span>2</span><div><strong>Select 2–3 matching customers.</strong><div class="mini-guide">Look for one exact trait they share.</div></div></div>
+          <div class="instruction-row"><span>3</span><div><strong>Explain why the trait matters.</strong><div class="mini-guide">Connect the similarity to what they may value.</div></div></div>
+        </div>
+        <div id="selectionStatus" class="selection-status"><strong>Selected:</strong> 0 customers</div>
+        <button id="loadExample" class="quick-example" type="button">Show me a valid example selection</button>
+        <button id="resetExample" class="reset-example" type="button">Reset example and start my own</button>
+        <div class="callout"><strong>Remember:</strong> Customers do not belong together simply because they all work in agriculture.</div>
+      </aside>
+      <div id="customerGrid" class="customer-grid"></div>
+    </div>
+    <div class="definition-grid">
+      <article class="field-card"><label for="segmentName">Name your segment</label><input id="segmentName" type="text" placeholder="Example: Technology-Forward Grain Producers"></article>
+      <article class="field-card"><label for="segmentOffer">What might this segment value?</label><input id="segmentOffer" type="text" placeholder="Example: Integration support and measurable return"></article>
+      <article class="field-card full"><label for="segmentLogic">Explain why these customers belong together</label><textarea id="segmentLogic" placeholder="Identify the shared characteristic and explain why it could affect how these customers respond to an offer."></textarea></article>
+    </div>
+    <div id="builderFeedback" class="feedback" aria-live="polite"></div>
+    <div class="buttons"><button id="builderBack" class="btn btn-secondary" type="button">Back to practice</button><button id="checkBuild" class="btn btn-gold" type="button">Check my segment</button><button id="openTests" class="btn btn-primary" type="button" disabled>Test the segment</button></div>
+  </section>
+
+  <section id="step4" class="panel">
+    <h2>Step 4: Apply the five tests</h2>
+    <p class="intro">Evaluate whether the group is measurable, substantial, accessible, differentiable, and actionable.</p>
+    <div id="segmentRecap" class="summary-card"></div>
+    <div id="testGrid" class="test-grid"></div>
+    <div id="testFeedback" class="feedback" aria-live="polite"></div>
+    <div class="buttons"><button id="testsBack" class="btn btn-secondary" type="button">Back to segment builder</button><button id="evaluate" class="btn btn-gold" type="button">Evaluate my segment</button><button id="finish" class="btn btn-primary" type="button" disabled>Review coaching feedback</button></div>
+  </section>
+
+  <section id="coaching" class="panel">
+    <h2>Segmentation coaching</h2>
+    <p class="intro">Segmentation helps simplify a complicated market, but the salesperson must still learn how each individual customer operates and makes decisions.</p>
+    <div id="coachingContent"></div>
+    <div class="buttons"><button id="coachingBack" class="btn btn-secondary" type="button">Back to evaluation</button><button id="complete" class="btn btn-primary" type="button">Complete activity</button></div>
+  </section>
+
+  <section id="completion" class="panel">
+    <div class="completion"><div><div class="completion-mark">✓</div><h2>Segmentation analysis complete</h2><p>You used demographic, product-usage, and psychographic information to identify a customer segment and evaluated whether that segment could support a focused sales or marketing strategy.</p><div class="buttons" style="justify-content:center"><button id="restart" class="btn btn-primary" type="button">Restart activity</button><button id="print" class="btn btn-secondary" type="button">Print or save as PDF</button></div></div></div>
+  </section>
+  <div class="footer">Designed as a guided Purdue agricultural customer-segmentation activity.</div>
+</main>
+
 <script>
-const STORAGE_KEY='cab-agriselling-module2-v1';const form=document.getElementById('workbookForm');const customerList=document.getElementById('customerList');const heatmapBody=document.getElementById('heatmapBody');let saveTimer;
-const requiredNames=['territoryName','planningHorizon','territoryEvidence','territoryImplication','prioritySegment','segmentNeed','strategicFit','relationshipReturn','heatmapInsight','priority1','priority1Evidence','priority1Assumptions','priority1Resources','priority2','priority2Evidence','priority2Assumptions','priority2Resources','reviewDate','successSignal','forecastAssumption','adjustmentRule'];
-const criteria=[['fit','Strategic fit'],['growth','Growth potential'],['relationship','Relationship value'],['probability','Probability'],['efficiency','Resource efficiency']];
-function scoreOptions(){return '<option value="">—</option>'+[1,2,3,4,5].map(n=>`<option value="${n}">${n}</option>`).join('')}
-function buildCustomers(){for(let i=1;i<=5;i++){const card=document.createElement('div');card.className='customer-card';card.innerHTML=`<div class="customer-head"><div class="customer-number">${i}</div><input type="text" name="customer${i}Name" data-required="true" placeholder="Customer or case name ${i}" aria-label="Customer ${i} name"><span class="score-pill" id="customer${i}Total">0 / 25</span></div><div class="customer-body"><div class="score-grid">${criteria.map(([key,label])=>`<div class="score-field"><label for="customer${i}${key}">${label}</label><select id="customer${i}${key}" name="customer${i}${key}" data-customer="${i}" data-score="true">${scoreOptions()}</select></div>`).join('')}</div><div class="field" style="margin-top:14px"><label for="customer${i}Note">Key evidence or context</label><textarea id="customer${i}Note" name="customer${i}Note" placeholder="What should you remember when interpreting this score?"></textarea></div></div>`;customerList.appendChild(card)}}
-buildCustomers();
-function collectData(){const fd=new FormData(form),data={};for(const [k,v] of fd.entries()){if(k==='territoryFactors')continue;data[k]=v}data.territoryFactors=fd.getAll('territoryFactors');data.savedAt=new Date().toISOString();return data}
-function restoreData(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw){updateAll();return}try{const data=JSON.parse(raw);Object.entries(data).forEach(([k,v])=>{if(['territoryFactors','savedAt'].includes(k))return;const el=form.elements[k];if(el)el.value=v||''});(data.territoryFactors||[]).forEach(v=>{const el=[...form.querySelectorAll('[name=territoryFactors]')].find(x=>x.value===v);if(el)el.checked=true});updateSaveStatus(data.savedAt)}catch(e){}updateAll()}
-function saveData(){const data=collectData();localStorage.setItem(STORAGE_KEY,JSON.stringify(data));updateSaveStatus(data.savedAt);showToast('Workbook saved on this device.')}
-function scheduleSave(){document.getElementById('saveStatus').textContent='Saving…';clearTimeout(saveTimer);saveTimer=setTimeout(()=>{const data=collectData();localStorage.setItem(STORAGE_KEY,JSON.stringify(data));updateSaveStatus(data.savedAt)},450)}
-function updateSaveStatus(iso){const t=iso?new Date(iso):new Date();document.getElementById('saveStatus').textContent=`Saved ${t.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}`}
-function totalFor(i){return criteria.reduce((sum,[key])=>sum+(Number(form.elements[`customer${i}${key}`]?.value)||0),0)}
-function heatClass(v,max=5){const ratio=Number(v)/max;return ratio>=.8?'heat-high':ratio>=.5?'heat-mid':'heat-low'}
-function updateCustomerScores(){let rows='';for(let i=1;i<=5;i++){const name=form.elements[`customer${i}Name`].value.trim()||`Customer ${i}`;const vals=criteria.map(([key])=>Number(form.elements[`customer${i}${key}`].value)||0);const total=vals.reduce((a,b)=>a+b,0);const pill=document.getElementById(`customer${i}Total`);pill.textContent=`${total} / 25`;pill.className='score-pill '+(total>=20?'high':total>=13?'medium':'low');rows+=`<tr><td>${escapeHtml(name)}</td>${vals.map(v=>`<td class="${heatClass(v)}">${v||'—'}</td>`).join('')}<td class="${heatClass(total,25)}">${total}</td></tr>`}heatmapBody.innerHTML=rows;updatePriorityOptions()}
-function updatePriorityOptions(){const values=[1,2,3,4,5].map(i=>form.elements[`customer${i}Name`].value.trim()).filter(Boolean);['priority1','priority2'].forEach(id=>{const select=form.elements[id],current=select.value;select.innerHTML='<option value="">Choose a customer</option>'+values.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');if(values.includes(current))select.value=current})}
-function completionState(){let complete=requiredNames.filter(n=>String(form.elements[n]?.value||'').trim()).length;for(let i=1;i<=5;i++){const named=String(form.elements[`customer${i}Name`].value||'').trim();const scored=criteria.every(([k])=>form.elements[`customer${i}${k}`].value);if(named&&scored)complete++}return{completed:complete,total:requiredNames.length+5}}
-function updateProgress(){const{completed,total}=completionState(),p=Math.round(completed/total*100);document.getElementById('progressRing').style.setProperty('--p',p);document.getElementById('progressPercent').textContent=p+'%';document.getElementById('progressCount').textContent=`${completed} of ${total} key responses complete`;document.getElementById('progressBar').style.width=p+'%';document.getElementById('progressLabel').textContent=p===100?'Ready to download':p>=70?'Almost there':p>=30?'Good progress':'Let’s get started';document.querySelectorAll('[data-section]').forEach(section=>{const req=[...section.querySelectorAll('[data-required=true]')];const ok=req.length&&req.every(el=>String(el.value||'').trim());document.querySelector(`.nav-link[href="#${section.id}"]`)?.classList.toggle('complete',ok)})}
-function updateAll(){updateCustomerScores();updateProgress()}
-function missingItems(){const labels={territoryName:'Territory or market',planningHorizon:'Planning horizon',territoryEvidence:'Territory evidence',territoryImplication:'Decision implication',prioritySegment:'Priority segment',segmentNeed:'Segment need',strategicFit:'Strategic fit',relationshipReturn:'Return on relationship',heatmapInsight:'Heat-map insight',priority1:'Priority Account 1',priority1Evidence:'Priority 1 evidence',priority1Assumptions:'Priority 1 assumptions',priority1Resources:'Priority 1 resources and action',priority2:'Priority Account 2',priority2Evidence:'Priority 2 evidence',priority2Assumptions:'Priority 2 assumptions',priority2Resources:'Priority 2 resources and action',reviewDate:'Review timing',successSignal:'Early success signal',forecastAssumption:'Forecast assumption',adjustmentRule:'Reallocation rule'};const missing=requiredNames.filter(n=>!String(form.elements[n]?.value||'').trim()).map(n=>labels[n]);for(let i=1;i<=5;i++){if(!form.elements[`customer${i}Name`].value.trim()||!criteria.every(([k])=>form.elements[`customer${i}${k}`].value))missing.push(`Complete Customer ${i} name and scores`)}return missing}
-function reviewMissing(){const missing=missingItems();if(!missing.length)return showToast('Everything is complete—your portfolio is ready!');showToast(`${missing.length} key item${missing.length===1?'':'s'} still incomplete.`);const first=requiredNames.find(n=>!String(form.elements[n]?.value||'').trim());if(first)form.elements[first].scrollIntoView({behavior:'smooth',block:'center'});else document.getElementById('customers').scrollIntoView({behavior:'smooth'})}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),2600)}function escapeHtml(v){return String(v||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-function addHeader(doc){const w=doc.internal.pageSize.getWidth();doc.setFillColor(31,31,31);doc.rect(0,0,w,16,'F');doc.setFillColor(207,185,145);doc.rect(0,16,w,2,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(9);doc.text('FOUNDATIONS OF AGRISELLING  |  MODULE 2 WORKBOOK',14,10.5);doc.setTextColor(31,31,31)}
-function pdfText(doc,text,x,y,width,lh=5.2){const lines=doc.splitTextToSize(String(text||'Not provided').trim()||'Not provided',width);if(y+lines.length*lh>270){doc.addPage();addHeader(doc);y=28}doc.text(lines,x,y);return y+lines.length*lh}
-function sectionTitle(doc,title,y){if(y>254){doc.addPage();addHeader(doc);y=28}doc.setFillColor(245,241,233);doc.roundedRect(14,y-6,182,12,2,2,'F');doc.setTextColor(45,42,38);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text(title,18,y+1.5);return y+14}
-function qa(doc,label,answer,y){doc.setFont('helvetica','bold');doc.setFontSize(9.5);doc.setTextColor(72,63,51);y=pdfText(doc,label,14,y,182,4.8)+1;doc.setFont('helvetica','normal');doc.setFontSize(10);doc.setTextColor(31,31,31);y=pdfText(doc,answer,14,y,182,5.2);return y+6}
-async function generatePdf(){saveData();if(!window.jspdf)return showToast('PDF library could not load. Check your internet connection.');const btn=document.getElementById('pdfButton');btn.disabled=true;btn.textContent='Building PDF…';try{const{jsPDF}=window.jspdf,doc=new jsPDF({unit:'mm',format:'letter'}),d=collectData(),w=doc.internal.pageSize.getWidth();doc.setFillColor(31,31,31);doc.rect(0,0,w,279,'F');doc.setFillColor(207,185,145);doc.rect(0,0,10,279,'F');doc.setTextColor(207,185,145);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('FOUNDATIONS OF AGRISELLING',22,39);doc.setTextColor(255,255,255);doc.setFontSize(30);doc.text(doc.splitTextToSize('Priority Customer Portfolio',165),22,61);doc.setDrawColor(207,185,145);doc.setLineWidth(.8);doc.line(22,102,116,102);doc.setFont('helvetica','normal');doc.setFontSize(12);doc.setTextColor(235,232,226);doc.text('Module 2 Digital Workbook',22,116);doc.setFontSize(10);doc.text(`Territory: ${d.territoryName||'Not provided'}`,22,142);doc.text(`Planning horizon: ${d.planningHorizon||'Not provided'}`,22,151);doc.text(`Completed: ${new Date().toLocaleDateString()}`,22,160);doc.setFontSize(8.5);doc.setTextColor(190,187,181);doc.text('Center for Food and Agricultural Business',22,256);
-doc.addPage();addHeader(doc);let y=30;y=sectionTitle(doc,'1. Territory Strategy',y);y=qa(doc,'Territory factors',(d.territoryFactors||[]).join(', ')||'None selected',y);y=qa(doc,'Evidence and observations',d.territoryEvidence,y);y=qa(doc,'Decision implication',d.territoryImplication,y);y=sectionTitle(doc,'2. Strategic Customer Fit',y);y=qa(doc,'Priority segment',d.prioritySegment,y);y=qa(doc,'Most important need',d.segmentNeed,y);y=qa(doc,'Connection to company strategy and value bundle',d.strategicFit,y);y=qa(doc,'Potential return on relationship',d.relationshipReturn,y);
-y=sectionTitle(doc,'3. Customer Opportunity Comparison',y);for(let i=1;i<=5;i++){const name=d[`customer${i}Name`]||`Customer ${i}`;const score=totalFor(i);y=qa(doc,`${name} — total score ${score}/25`,`Strategic fit: ${d[`customer${i}fit`]||'—'} | Growth: ${d[`customer${i}growth`]||'—'} | Relationship value: ${d[`customer${i}relationship`]||'—'} | Probability: ${d[`customer${i}probability`]||'—'} | Resource efficiency: ${d[`customer${i}efficiency`]||'—'}\nEvidence/context: ${d[`customer${i}Note`]||'Not provided'}`,y)}y=qa(doc,'Heat-map insight',d.heatmapInsight,y);
-y=sectionTitle(doc,'4. Priority Portfolio',y);y=qa(doc,'Priority Account 1',d.priority1,y);y=qa(doc,'Evidence',d.priority1Evidence,y);y=qa(doc,'Assumptions or uncertainty',d.priority1Assumptions,y);y=qa(doc,'Resources and next action',d.priority1Resources,y);y=qa(doc,'Priority Account 2',d.priority2,y);y=qa(doc,'Evidence',d.priority2Evidence,y);y=qa(doc,'Assumptions or uncertainty',d.priority2Assumptions,y);y=qa(doc,'Resources and next action',d.priority2Resources,y);y=qa(doc,'Opportunity intentionally deprioritized',d.deprioritize,y);y=sectionTitle(doc,'5. Forecast and Review',y);y=qa(doc,'Portfolio review timing',d.reviewDate,y);y=qa(doc,'Early signal of progress',d.successSignal,y);y=qa(doc,'Most important assumption to verify',d.forecastAssumption,y);y=qa(doc,'Evidence that would trigger reallocation',d.adjustmentRule,y);
-const pages=doc.getNumberOfPages();for(let i=2;i<=pages;i++){doc.setPage(i);doc.setFontSize(8);doc.setTextColor(115,110,104);doc.text(`Module 2 Priority Portfolio  •  Page ${i-1}`,14,274)}doc.save('Module-2-Priority-Customer-Portfolio.pdf');showToast('Your Module 2 PDF is ready.')}catch(e){console.error(e);showToast('We could not build the PDF. Please try again.')}finally{btn.disabled=false;btn.textContent='Download Module 2 PDF'}}
-form.addEventListener('input',()=>{scheduleSave();updateAll()});form.addEventListener('change',()=>{scheduleSave();updateAll()});document.getElementById('saveButton').addEventListener('click',saveData);document.getElementById('reviewButton').addEventListener('click',reviewMissing);document.getElementById('pdfButton').addEventListener('click',generatePdf);restoreData();
+(() => {
+  'use strict';
+  const scenarios=[
+    {prompt:'A seed company groups farms into operations under 500 acres, 500 to 2,000 acres, and more than 2,000 acres.',answer:'demographic',explanation:'This is demographic segmentation because the groups are based on operation size.'},
+    {prompt:'An equipment dealer identifies producers who currently use older mechanical planters and may benefit from precision upgrades.',answer:'usage',explanation:'This is product-usage segmentation because the group is defined by equipment currently used.'},
+    {prompt:'A crop-input supplier separates buyers who prioritize the lowest initial price from buyers who prioritize service and long-term support.',answer:'psychographic',explanation:'This is psychographic segmentation because the groups are based on buying behavior and beliefs about value.'},
+    {prompt:'An animal-health company develops a special program for dairy operations managing recurring mastitis challenges.',answer:'usage',explanation:'This is product-usage segmentation because the group is based on livestock type and a production problem.'},
+    {prompt:'A technology provider targets progressive customers who actively seek new tools before neighboring operations adopt them.',answer:'psychographic',explanation:'This is psychographic segmentation because the defining characteristic is innovation orientation.'}
+  ];
+  const customers=[
+    {id:'riverbend',name:'Riverbend Grain',facts:['3,400 acres','Corn and soybeans','Precision application tools','Values efficiency and measurable return'],traits:{demographic:['large'],usage:['grain','precision'],psychographic:['performance']}},
+    {id:'sunrise',name:'Sunrise Family Farm',facts:['420 acres','Corn and soybeans','Older equipment fleet','Values trusted relationships and personal service'],traits:{demographic:['small'],usage:['grain','traditional-equipment'],psychographic:['relationship']}},
+    {id:'prairie',name:'Prairie View Dairy',facts:['1,100 dairy cows','Automated monitoring','Focused on herd-health consistency','Adopts after reviewing strong evidence'],traits:{demographic:['large'],usage:['livestock','technology'],psychographic:['evidence']}},
+    {id:'meadow',name:'Meadow Lane Dairy',facts:['160 dairy cows','Conventional monitoring','Focused on controlling input costs','Strongly price-sensitive'],traits:{demographic:['small'],usage:['livestock','traditional-equipment'],psychographic:['price']}},
+    {id:'horizon',name:'Horizon Specialty Crops',facts:['650 acres','Vegetables and specialty crops','Frequent pest-management decisions','Actively seeks new technology'],traits:{demographic:['medium'],usage:['specialty-crops','pest'],psychographic:['innovation']}},
+    {id:'oakridge',name:'Oak Ridge Produce',facts:['590 acres','Vegetables and specialty crops','Frequent pest-management decisions','Prefers proven programs and dependable support'],traits:{demographic:['medium'],usage:['specialty-crops','pest'],psychographic:['relationship']}}
+  ];
+  const tests=[
+    {id:'measurable',label:'Measurable',question:'Can the company estimate the number of customers, acres, animals, or market potential in this segment?'},
+    {id:'substantial',label:'Substantial',question:'Is the segment large or valuable enough to justify special time, resources, or programming?'},
+    {id:'accessible',label:'Accessible',question:'Can the company identify, reach, and communicate with these customers separately?'},
+    {id:'differentiable',label:'Differentiable',question:'Can you clearly determine who belongs, and would this group respond differently from other customers?'},
+    {id:'actionable',label:'Actionable',question:'Could the company change its message, offer, service, pricing, or resource allocation for this group?'}
+  ];
+  const stepIds=['step1','step2','step3','step4','coaching','completion'];
+  const stepTitles=['Learn the segmentation lenses','Identify the segmentation method','Build a customer segment','Apply the five tests','Review coaching feedback'];
+  let answered=0,correct=0,selectedCustomers=new Set(),segmentValidated=false,finalScore=0,currentStep=0;
+  const $=id=>document.getElementById(id);
+  function showStep(index){currentStep=Math.max(0,Math.min(index,5));stepIds.forEach((id,i)=>$(id).classList.toggle('active',i===currentStep));if(currentStep<4){$('progressText').textContent=`Step ${currentStep+1} of 4`;$('progressTitle').textContent=stepTitles[currentStep];$('progressBar').style.width=`${(currentStep+1)*25}%`}else if(currentStep===4){$('progressText').textContent='Coaching';$('progressTitle').textContent=stepTitles[4];$('progressBar').style.width='100%'}else{$('progressText').textContent='Complete';$('progressTitle').textContent='Segmentation activity finished';$('progressBar').style.width='100%'}window.scrollTo({top:0,behavior:'smooth'})}
+  function renderScenarios(){$('scenarioList').innerHTML=scenarios.map((s,i)=>`<article class="scenario-card" data-scenario="${i}"><div class="scenario-head"><div class="scenario-number">${i+1}</div><div><h3>Customer grouping</h3><p>${s.prompt}</p></div></div><div class="choice-grid"><button class="choice" data-index="${i}" data-choice="demographic">Demographics</button><button class="choice" data-index="${i}" data-choice="usage">Product usage</button><button class="choice" data-index="${i}" data-choice="psychographic">Psychographics</button></div><div class="feedback"></div></article>`).join('');document.querySelectorAll('[data-choice]').forEach(b=>b.addEventListener('click',handleChoice))}
+  function handleChoice(e){const b=e.currentTarget,i=Number(b.dataset.index),a=b.closest('[data-scenario]');if(a.dataset.answered==='true')return;a.dataset.answered='true';answered++;const s=scenarios[i],ok=b.dataset.choice===s.answer;if(ok)correct++;a.querySelectorAll('[data-choice]').forEach(c=>{c.disabled=true;if(c.dataset.choice===s.answer)c.classList.add('correct')});if(!ok)b.classList.add('incorrect');const f=a.querySelector('.feedback');f.className=`feedback show ${ok?'good':'watch'}`;f.innerHTML=`<strong>${ok?'Correct':'Review the defining characteristic'}.</strong><br>${s.explanation}`;if(answered===scenarios.length){$('quizSummary').className=`feedback show ${correct>=4?'good':'watch'}`;$('quizSummary').innerHTML=`<strong>You identified ${correct} of ${scenarios.length} correctly.</strong><br>${correct>=4?'You are ready to apply the three segmentation methods.':'Remember: demographics describe observable characteristics, product usage describes what customers use or produce, and psychographics describe how they buy and define value.'}`;$('openBuilder').disabled=false}}
+  function renderCustomers(){
+    $('customerGrid').innerHTML=customers.map(c=>`<button class="customer-card" type="button" data-customer="${c.id}"><span class="customer-state">Select customer</span><h3>${c.name}</h3><ul>${c.facts.map(f=>`<li>${f}</li>`).join('')}</ul></button>`).join('');
+    document.querySelectorAll('[data-customer]').forEach(card=>card.addEventListener('click',()=>{
+      const lens=$('segmentLens').value;
+      if(!lens){$('lensHelper').textContent='Start here: choose Demographics, Product usage, or Psychographics. Then the activity can help you identify matching customers.';return}
+      const id=card.dataset.customer;
+      if(selectedCustomers.has(id)){selectedCustomers.delete(id);card.classList.remove('selected');card.querySelector('.customer-state').textContent='Select customer'}
+      else{selectedCustomers.add(id);card.classList.add('selected');card.querySelector('.customer-state').textContent='Selected'}
+      updateSelectionStatus();segmentValidated=false;$('openTests').disabled=true;
+    }));
+    updateSelectionStatus();
+  }
+  function sharedTraits(selected,lens){if(!selected.length)return[];return selected[0].traits[lens].filter(t=>selected.every(c=>c.traits[lens].includes(t)))}
+  function formatLens(l){return l==='usage'?'Product usage':l.charAt(0).toUpperCase()+l.slice(1)}
+  const traitLabels={large:'large-scale operations',small:'small-scale operations',medium:'medium-sized operations',grain:'grain producers',precision:'precision-technology users','traditional-equipment':'traditional-equipment users',livestock:'livestock operations',technology:'technology users','specialty-crops':'specialty-crop producers',pest:'operations with frequent pest-management needs',performance:'performance-focused buyers',relationship:'relationship-and-service-focused buyers',evidence:'evidence-driven buyers',price:'price-sensitive buyers',innovation:'innovation-oriented buyers'};
+  function readableTraits(items){return items.map(x=>traitLabels[x]||x.replaceAll('-',' '))}
+  function updateSelectionStatus(){const count=selectedCustomers.size;$('selectionStatus').innerHTML=`<strong>Selected:</strong> ${count} customer${count===1?'':'s'}${count?` — ${customers.filter(c=>selectedCustomers.has(c.id)).map(c=>c.name).join(', ')}`:''}`;}
+  function validExamples(lens){const groups={};customers.forEach(c=>c.traits[lens].forEach(t=>(groups[t]??=[]).push(c)));return Object.entries(groups).filter(([,cs])=>cs.length>=2).sort((a,b)=>b[1].length-a[1].length)}
+  function checkSegment(){
+    const lens=$('segmentLens').value,name=$('segmentName').value.trim(),offer=$('segmentOffer').value.trim(),logic=$('segmentLogic').value.trim(),f=$('builderFeedback');
+    const selected=customers.filter(c=>selectedCustomers.has(c.id));
+    const missing=[];
+    if(!lens) missing.push('choose one segmentation lens');
+    if(selected.length<2) missing.push(`select at least two customers (you currently have ${selected.length})`);
+    if(!name) missing.push('give the segment a short name');
+    if(!offer) missing.push('describe one thing the segment may value');
+    if(!logic) missing.push('write one sentence explaining the shared trait');
+    if(missing.length){
+      f.className='feedback risk show';
+      f.innerHTML=`<strong>You are close. Here is exactly what is still needed:</strong><ul class="feedback-list">${missing.map(m=>`<li>${m}</li>`).join('')}</ul><div class="feedback-section"><strong>Use this sentence starter:</strong><br>“Using the ___ lens, I grouped ___ and ___ because they both ___. This matters because they may value ___.”</div>`;
+      segmentValidated=false;$('openTests').disabled=true;return;
+    }
+    const shared=sharedTraits(selected,lens);
+    if(!shared.length){
+      const examples=validExamples(lens).slice(0,3);
+      f.className='feedback watch show';
+      f.innerHTML=`<strong>Your form is complete, but this customer combination does not match under ${formatLens(lens)}.</strong><br>You selected <strong>${selected.map(c=>c.name).join(', ')}</strong>, but they do not share one coded ${formatLens(lens).toLowerCase()} trait.<div class="feedback-section"><strong>Try one of these valid groupings:</strong><ul class="feedback-list">${examples.map(([trait,cs])=>`<li><strong>${readableTraits([trait])[0]}:</strong> ${cs.map(c=>c.name).join(' + ')}</li>`).join('')}</ul>You may also keep your customers and change the lens if another type of similarity is more appropriate.</div>`;
+      segmentValidated=false;$('openTests').disabled=true;return;
+    }
+    const readable=readableTraits(shared);
+    f.className='feedback good show';
+    f.innerHTML=`<strong>Yes—this is a defensible segment.</strong><br><strong>Your lens:</strong> ${formatLens(lens)}<br><strong>Your customers:</strong> ${selected.map(c=>c.name).join(', ')}<br><strong>The shared trait:</strong> ${readable.join(', ')}<div class="feedback-section"><strong>Why it works:</strong> You used one lens consistently and found a trait shared by every selected customer.<br><br><strong>Next:</strong> Test whether this useful customer group is measurable, substantial, accessible, differentiable, and actionable.</div>`;
+    segmentValidated=true;$('openTests').disabled=false;
+  }
+  function renderTests(){const selected=customers.filter(c=>selectedCustomers.has(c.id)),lens=$('segmentLens').value,name=$('segmentName').value.trim(),offer=$('segmentOffer').value.trim(),logic=$('segmentLogic').value.trim();$('segmentRecap').innerHTML=`<strong>Segment:</strong> ${name}<br><strong>Lens:</strong> ${formatLens(lens)}<br><strong>Selected customers:</strong> ${selected.map(c=>c.name).join(', ')}<br><strong>Likely value:</strong> ${offer}<br><br>${logic}`;$('testGrid').innerHTML=tests.map(t=>`<article class="test-card" data-test="${t.id}"><div><h3>${t.label}</h3><p>${t.question}</p></div><div class="test-options"><button class="test-choice" data-test-value="yes">Yes</button><button class="test-choice" data-test-value="not-yet">Not yet</button></div></article>`).join('');document.querySelectorAll('[data-test-value]').forEach(b=>b.addEventListener('click',()=>{const card=b.closest('[data-test]');card.dataset.value=b.dataset.testValue;card.querySelectorAll('[data-test-value]').forEach(x=>x.classList.remove('active'));b.classList.add('active');$('finish').disabled=true}))}
+  function evaluateTests(){
+    const cards=[...document.querySelectorAll('[data-test]')],f=$('testFeedback');
+    if(cards.some(c=>!c.dataset.value)){const unanswered=cards.filter(c=>!c.dataset.value).map(c=>c.querySelector('h3').textContent);f.className='feedback risk show';f.innerHTML=`<strong>One more step.</strong><br>Please answer: ${unanswered.join(', ')}.`;return}
+    finalScore=cards.filter(c=>c.dataset.value==='yes').length;
+    const yes=cards.filter(c=>c.dataset.value==='yes').map(c=>c.querySelector('h3').textContent);
+    const no=cards.filter(c=>c.dataset.value==='not-yet').map(c=>c.querySelector('h3').textContent);
+    const advice={Measurable:'Decide what count or market data would prove the size of this group.',Substantial:'Estimate whether the potential revenue or strategic value justifies a special approach.',Accessible:'Identify a practical list, channel, event, dealer, or communication method for reaching the group.',Differentiable:'Clarify the boundary: who is in, who is out, and why their response should differ.',Actionable:'Name one specific change in message, offer, service, pricing, or resource allocation.'};
+    let heading=finalScore===5?'Strong, strategy-ready segment':finalScore>=3?'Promising segment that needs refinement':'Useful practice group, but not yet an effective segment';
+    f.className=`feedback show ${finalScore===5?'good':'watch'}`;
+    f.innerHTML=`<strong>${heading}</strong><br>Your segment met <strong>${finalScore} of 5</strong> tests.${yes.length?`<div class="feedback-section"><strong>Tests met:</strong> ${yes.join(', ')}.</div>`:''}${no.length?`<div class="feedback-section"><strong>What to strengthen:</strong><ul class="feedback-list">${no.map(x=>`<li><strong>${x}:</strong> ${advice[x]}</li>`).join('')}</ul></div>`:'<div class="feedback-section"><strong>Excellent:</strong> The group is not only similar; it is practical enough to guide action. Your next decision is whether it deserves priority compared with other segments.</div>'}`;
+    $('finish').disabled=false;
+  }
+  function renderCoaching(){const selected=customers.filter(c=>selectedCustomers.has(c.id)),lens=$('segmentLens').value,name=$('segmentName').value.trim(),offer=$('segmentOffer').value.trim(),logic=$('segmentLogic').value.trim();$('coachingContent').innerHTML=`<div class="coach-grid"><article class="coach-card best"><h3>Your segment hypothesis</h3><p><strong>${name}</strong></p><p><strong>Method:</strong> ${formatLens(lens)}</p><p><strong>Customers:</strong> ${selected.map(c=>c.name).join(', ')}</p><p><strong>Likely value:</strong> ${offer}</p><p><strong>Your reasoning:</strong> ${logic}</p></article><article class="coach-card watch-card"><h3>Strategic coaching</h3><p><strong>Effectiveness score:</strong> ${finalScore} of 5 tests met</p><p>${finalScore===5?'Next, decide whether this segment should receive priority over other attractive segments.':'Investigate the tests not yet met before building a special program.'}</p><p>Segmentation guides resource allocation and program design; it does not replace individual discovery.</p></article></div><div class="summary-card" style="margin-top:22px"><strong>Textbook connection:</strong> Segments simplify a complicated marketplace so resources can be allocated and programs designed at scale. Salespeople then test those assumptions in the field.</div>`}
+  function reset(){answered=0;correct=0;selectedCustomers.clear();segmentValidated=false;finalScore=0;$('segmentLens').value='';$('segmentName').value='';$('segmentOffer').value='';$('segmentLogic').value='';$('quizSummary').className='feedback';$('builderFeedback').className='feedback';$('testFeedback').className='feedback';$('openBuilder').disabled=true;$('openTests').disabled=true;$('finish').disabled=true;$('resetExample').classList.remove('show');renderScenarios();renderCustomers();updateSelectionStatus();showStep(0)}
+  $('loadExample').addEventListener('click',()=>{
+    $('segmentLens').value='usage';selectedCustomers=new Set(['horizon','oakridge']);
+    document.querySelectorAll('[data-customer]').forEach(c=>{const on=selectedCustomers.has(c.dataset.customer);c.classList.toggle('selected',on);c.querySelector('.customer-state').textContent=on?'Selected':'Select customer'});
+    $('segmentName').value='Specialty-Crop Pest Management Customers';
+    $('segmentOffer').value='Practical pest-management support and reliable recommendations';
+    $('segmentLogic').value='Using the product usage lens, I grouped Horizon Specialty Crops and Oak Ridge Produce because both grow specialty crops and make frequent pest-management decisions. This matters because they may value practical pest-management support and reliable recommendations.';
+    $('lensHelper').textContent='Example loaded: both selected customers share specialty-crop and pest-management usage traits.';updateSelectionStatus();segmentValidated=false;$('openTests').disabled=true;$('builderFeedback').className='feedback';$('resetExample').classList.add('show');
+  });
+  $('resetExample').addEventListener('click',()=>{
+    $('segmentLens').value='';
+    selectedCustomers.clear();
+    document.querySelectorAll('[data-customer]').forEach(c=>{c.classList.remove('selected');c.querySelector('.customer-state').textContent='Select customer'});
+    $('segmentName').value='';
+    $('segmentOffer').value='';
+    $('segmentLogic').value='';
+    $('lensHelper').textContent='The example has been cleared. Choose a lens and build your own segment.';
+    updateSelectionStatus();
+    segmentValidated=false;
+    $('openTests').disabled=true;
+    $('builderFeedback').className='feedback';
+    $('resetExample').classList.remove('show');
+    $('segmentLens').focus();
+  });
+  $('startPractice').addEventListener('click',()=>showStep(1));$('quizBack').addEventListener('click',()=>showStep(0));$('openBuilder').addEventListener('click',()=>showStep(2));$('builderBack').addEventListener('click',()=>showStep(1));$('checkBuild').addEventListener('click',checkSegment);$('openTests').addEventListener('click',()=>{if(segmentValidated){renderTests();showStep(3)}});$('testsBack').addEventListener('click',()=>showStep(2));$('evaluate').addEventListener('click',evaluateTests);$('finish').addEventListener('click',()=>{renderCoaching();showStep(4)});$('coachingBack').addEventListener('click',()=>showStep(3));$('complete').addEventListener('click',()=>showStep(5));$('restart').addEventListener('click',reset);$('print').addEventListener('click',()=>window.print());
+  $('segmentLens').addEventListener('change',e=>{selectedCustomers.clear();segmentValidated=false;$('openTests').disabled=true;document.querySelectorAll('[data-customer]').forEach(c=>{c.classList.remove('selected');c.querySelector('.customer-state').textContent='Select customer'});const helper={demographic:'Look for shared observable characteristics such as acreage, herd size, scale, or age.',usage:'Look for shared crops, livestock, equipment, production systems, or recurring problems.',psychographic:'Look for shared buying behavior or beliefs about price, service, relationships, evidence, or innovation.'};$('lensHelper').textContent=helper[e.target.value]||'The lens determines which customer similarities should guide your selection.'});
+  renderScenarios();renderCustomers();
+})();
 </script>
-</body></html>
+</body>
+</html>
